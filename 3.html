@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Te Amo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #fff0f5, #ffe6f0);
+      font-family: 'Segoe Script', cursive;
+      color: #d1005d;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
+      margin-top: 1em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 1em auto;
+      max-width: 800px;
+      line-height: 1.6;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .heartGallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 3em auto;
+      max-width: 900px;
+    }
+
+    .heartPhoto {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      clip-path: path('M75 30 C95 0, 150 0, 150 50 C150 100, 75 150, 75 150 C75 150, 0 100, 0 50 C0 0, 55 0, 75 30 Z');
+      box-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      border: 2px solid #fff;
+      background-color: #fff;
+    }
+
+    .heartPhoto:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 51, 102, 0.7);
+    }
+
+    footer {
+      margin-top: 3em;
+      font-size: 1.3em;
+      color: #a0004d;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    .emojiRain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 2em;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    .audioPlayer {
+      margin-top: 2em;
+    }
+
+    .lovePhrase {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2em;
+      color: #ff3366;
+      background: rgba(255,255,255,0.8);
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(255, 51, 102, 0.3);
+      opacity: 0;
+      animation: showPhrase 3s ease-in-out forwards;
+      z-index: 20;
+    }
+
+    @keyframes showPhrase {
+      0% { opacity: 0; transform: translate(-50%, -60%) scale(0.8); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -40%) scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="emojiRain" id="emojiRain"></div>
+
+  <h1>Mi amor eterno 💖</h1>
+
+  <div class="audioPlayer">
+    <audio id="bgMusic" controls autoplay>
+      <source src="quisiera.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
+  </div>
+
+  <p>
+    Desde que llegaste a mi vida, todo cambió. Tu sonrisa ilumina mis días, tu mirada me da paz, y tu amor me hace sentir completo.  
+    Gracias por cada momento, por cada caricia, por cada palabra que me llena el alma.  
+    Eres mi inspiración, mi alegría, mi razón de ser.  
+    Te amo con cada parte de mi corazón, y cada día contigo es un regalo que nunca dejaré de agradecer.
+  </p>
+
+  <p>
+    No hay palabras suficientes para describir lo que siento por ti.  
+    Eres mi sol en los días nublados, mi refugio en la tormenta, mi compañera en cada paso.  
+    Prometo seguir construyendo contigo esta historia hermosa, llena de ternura, pasión y complicidad.  
+    Gracias por existir, por elegirme, por amarme🌹
+  </p>
+
+  <p>
+    Y créeme que siempre quiero estar contigo, más durante la muerte, porque la vida se termina pero la muerte es eterna, mi amor.
+  </p>
+
+  <div class="heartGallery">
+    <img src="foto1.jpg" class="heartPhoto">
+    <img src="foto2.jpg" class="heartPhoto">
+    <img src="foto3.jpg" class="heartPhoto">
+    <img src="foto4.jpg" class="heartPhoto">
+    <img src="foto5.jpg" class="heartPhoto">
+    <img src="foto6.jpg" class="heartPhoto">
+    <img src="foto7.jpg" class="heartPhoto">
+    <img src="foto8.jpg" class="heartPhoto">
+    <img src="foto9.jpg" class="heartPhoto">
+    <img src="foto10.jpg" class="heartPhoto">
+  </div>
+
+  <footer>
+    Con todo mi amor, para ti... por siempre 💞
+  </footer>
+
+  <script>
+    // Lluvia de emojis románticos
+    const emojis = ['❤️', '🥰', '💋', '🌹', '😘', '💞', '💕', '💘', '😍'];
+    const container = document.getElementById('emojiRain');
+
+    function createEmoji() {
+      const emoji = document.createElement('div');
+      emoji.classList.add('emoji');
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      container.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 6000);
+    }
+
+    setInterval(createEmoji, 300);
+
+    // Frases automáticas desde el inicio
+    const lovePhrases = [
+      "Quisiera abrazarte por siempre 💞",
+      "Quisiera que nunca te fueras ❤️",
+      "Quisiera que este momento no acabara 🌹",
+      "Quisiera vivir en tu sonrisa 🥰",
+      "Quisiera que el mundo se detuviera contigo 💘",
+      "Quisiera que supieras cuánto te amo 😘",
+      "Quisiera que cada día sea contigo 💋",
+      "Quisiera que tu corazón siempre me elija 💖"
+    ];
+
+    let phraseIndex = 0;
+    function showNextPhrase() {
+      const phrase = document.createElement('div');
+      phrase.classList.add('lovePhrase');
+      phrase.textContent = lovePhrases[phraseIndex];
+      document.body.appendChild(phrase);
+      setTimeout(() => phrase.remove(), 3000);
+      phraseIndex = (phraseIndex + 1) % lovePhrases.length;
+    }
+
+    // Iniciar frases automáticamente
+    window.onload = () => {
+      showNextPhrase();
+      setInterval(showNextPhrase, 4000);
+    };
+
+    // Redirigir al finalizar la canción
+    document.getElementById('bgMusic').addEventListener('ended', () => {
+      window.location.href = 'https://youtu.be/2Mnj3__NOZw';
+    });
+  </script>
+
+</body>
+</html>
