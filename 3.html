@@ -2,9 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Te Amo</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       padding: 0;
@@ -18,15 +21,15 @@
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 4em;
+      font-size: 8vw;
       margin-top: 1em;
       animation: fadeIn 2s ease-in-out;
     }
 
     p {
-      font-size: 1.5em;
+      font-size: 1.2em;
       margin: 1em auto;
-      max-width: 800px;
+      max-width: 90%;
       line-height: 1.6;
       animation: fadeIn 3s ease-in-out;
     }
@@ -40,14 +43,17 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       margin: 3em auto;
-      max-width: 900px;
+      max-width: 1000px;
+      padding: 0 10px;
     }
 
     .heartPhoto {
-      width: 150px;
-      height: 150px;
+      width: 30vw;
+      max-width: 150px;
+      height: 30vw;
+      max-height: 150px;
       object-fit: cover;
       clip-path: path('M75 30 C95 0, 150 0, 150 50 C150 100, 75 150, 75 150 C75 150, 0 100, 0 50 C0 0, 55 0, 75 30 Z');
       box-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
@@ -63,9 +69,10 @@
 
     footer {
       margin-top: 3em;
-      font-size: 1.3em;
+      font-size: 1.2em;
       color: #a0004d;
       animation: fadeIn 4s ease-in-out;
+      padding: 0 10px;
     }
 
     .emojiRain {
@@ -100,7 +107,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      font-size: 2em;
+      font-size: 1.5em;
       color: #ff3366;
       background: rgba(255,255,255,0.8);
       padding: 10px 20px;
@@ -109,6 +116,7 @@
       opacity: 0;
       animation: showPhrase 3s ease-in-out forwards;
       z-index: 20;
+      max-width: 90%;
     }
 
     @keyframes showPhrase {
